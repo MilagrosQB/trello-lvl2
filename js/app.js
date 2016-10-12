@@ -51,7 +51,7 @@ window.addEventListener("load",function(){
 
 		agregarNuevaTarjeta.addEventListener("click", tarjetaCreada);
 			function tarjetaCreada(){
-					agregarNuevaTarjeta.style.display = "none";
+					agregarNuevaTarjeta.remove();
 			var area = document.createElement("textarea");
 					area.classList.add("areaTexto");
 					lista.appendChild(area);
@@ -60,21 +60,23 @@ window.addEventListener("load",function(){
 			var nodeBoton = document.createTextNode("Añadir");
 					nuevoBoton.classList.add("nuevoBoton");
 					nuevoBoton.appendChild(nodeBoton);
+					lista.appendChild(area);
 					lista.appendChild(nuevoBoton);
-					//lista.insertBefore(nuevoBoton,area.nextSibling);
+					//lista.insertBefore(nuevoBoton,area.parent.nextSibling);
 
 					nuevoBoton.addEventListener("click", nuevoGuardar);
 						function nuevoGuardar(){
 								area.style.display = "none";
 								nuevoBoton.style.display = "none";
-								agregarNuevaTarjeta.style.display = "block";
 						var listaTarjeta = document.createElement("textarea");
 								listaTarjeta.focus();
 						var textListTarjeta = document.createTextNode(area.value);
 								listaTarjeta.classList.add("areaTarjeta");
 								listaTarjeta.appendChild(textListTarjeta);
 								lista.appendChild(listaTarjeta);
-								lista.insertBefore(listaTarjeta,inputValue.nextSibling);
+								//lista.insertBefore(listaTarjeta,inputValue.parent.nextSibling);
+								lista.appendChild(agregarNuevaTarjeta);
+
 					}; 
 		};
 	}
