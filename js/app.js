@@ -25,9 +25,6 @@ window.addEventListener("load",function(){
 		formCard.style.display = "block";
 	}
 
-	/*btnCerrar.addEventListener("click", function(e){
-		e.preventDefault();
-	})*/
 
 	function imprimirCard(){
 		var lista = document.createElement("div");
@@ -62,7 +59,6 @@ window.addEventListener("load",function(){
 					nuevoBoton.appendChild(nodeBoton);
 					lista.appendChild(area);
 					lista.appendChild(nuevoBoton);
-					//lista.insertBefore(nuevoBoton,area.parent.nextSibling);
 
 					nuevoBoton.addEventListener("click", nuevoGuardar);
 						function nuevoGuardar(){
@@ -74,7 +70,6 @@ window.addEventListener("load",function(){
 								listaTarjeta.classList.add("areaTarjeta");
 								listaTarjeta.appendChild(textListTarjeta);
 								lista.appendChild(listaTarjeta);
-								//lista.insertBefore(listaTarjeta,inputValue.parent.nextSibling);
 								lista.appendChild(agregarNuevaTarjeta);
 
 					}; 
