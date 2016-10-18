@@ -9,7 +9,7 @@ body {
 }
 
 nav {
-    height: 50px;
+    height: auto;
     background-color: #0067A3;
     color: white;
 }
@@ -28,6 +28,10 @@ nav {
 }
 
 /*----Contenido----*/
+#formCard {
+    display: inline-block;
+}
+
 #addList {
     display: block;
     width: 250px;
@@ -35,6 +39,7 @@ nav {
     padding: 10px;
     margin: 1%;
     border-radius: 5px;
+    vertical-align: top;
     color: white;
     cursor: pointer;
 }
@@ -52,7 +57,7 @@ nav {
 
 #btnCerrar{
     width: 35px;
-    height: 35px;
+    height: 34px;
     font-size: 14px;
 }
 
@@ -105,12 +110,4 @@ nav {
     border-radius: 3px;
     border:none;
     resize: none;
-}
-
-.none{
-  display: none;
-}
-
-.block{
-  display: block;
 }

@@ -1,4 +1,5 @@
 window.addEventListener("load",function(){
+	var containerMain = document.getElementById("containerMain");
 	var containerGrand = document.getElementById("containerGrand");	
 	var containerFather = document.getElementById("containerFather");
 	var addList = document.getElementById("addList");
@@ -13,18 +14,24 @@ window.addEventListener("load",function(){
 		addInput.focus();
 	});
 
+
+	function mostrarformCard(){
+		containerFather.style.display = "block";
+		addList.style.display = "none";
+	}
+
 	btnSave.addEventListener("click",function(e){
 		e.preventDefault();
 		imprimirCard();
 		addInput.value = "";
 	});
 
-	function mostrarformCard(){
-		containerFather.style.display = "block";
-		addList.style.display = "none";
-		formCard.style.display = "block";
-	}
-
+	btnCerrar.addEventListener("click", function(e){
+		e.preventDefault();
+		containerFather.style.display = "none";
+		addList.style.display = "block";
+		addInput.value = "";
+	})
 
 	function imprimirCard(){
 		var lista = document.createElement("div");
@@ -34,17 +41,22 @@ window.addEventListener("load",function(){
 		
 		agregarLista();
 		function agregarLista(){
-		containerFather.style.display = "none";
-		addList.style.display = "inline-block";
+				containerFather.style.display = "none";
+			var divNew = document.createElement("div");
+				containerGrand.appendChild(divNew);
+				divNew.style.display = "inline-block";
+				divNew.appendChild(addList);
+				addList.style.display = "inline-block";
 				lista.appendChild(inputValue);
 				lista.classList.add("lista");
-				containerGrand.insertBefore(lista,addList.previousSibling);
+				containerGrand.appendChild(lista);
 				lista.style.display = "inline-block";
-				lista.style.cssFloat = "left";
 				agregarNuevaTarjeta.appendChild(textTarjeta);
 				lista.appendChild(agregarNuevaTarjeta);
 				agregarNuevaTarjeta.classList.add("tarjeta");
-			}
+				containerGrand.appendChild(addList);
+				containerGrand.appendChild(formCard);
+		}
 
 		agregarNuevaTarjeta.addEventListener("click", tarjetaCreada);
 			function tarjetaCreada(){
@@ -71,7 +83,6 @@ window.addEventListener("load",function(){
 								listaTarjeta.appendChild(textListTarjeta);
 								lista.appendChild(listaTarjeta);
 								lista.appendChild(agregarNuevaTarjeta);
-
 					}; 
 		};
 	}
