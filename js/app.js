@@ -83,6 +83,6 @@ window.addEventListener("load",function(){
 							lista.appendChild(listaTarjeta);
 							lista.appendChild(agregarNuevaTarjeta);
 					};
-		};
+			};
 	}
 });
