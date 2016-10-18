@@ -17,7 +17,18 @@ window.addEventListener("load",function(){
 	function mostrarformCard(){
 		containerFather.style.display = "block";
 		addList.style.display = "none";
+		btnSave.disabled = true;
+    addInput.addEventListener("keyup", validate);
 	}
+
+  function validate() {
+  	var addInputValue = document.getElementById("addInput").value;
+  	if (addInputValue.length === 0) {
+  		btnSave.disabled = true;
+  	} else {
+  		btnSave.disabled = false;
+  	}
+  }
 
 	btnSave.addEventListener("click",function(e){
 		e.preventDefault();
@@ -28,7 +39,7 @@ window.addEventListener("load",function(){
 	btnCerrar.addEventListener("click", function(e){
 		e.preventDefault();
 		containerFather.style.display = "none";
-		addList.style.display = "block";
+		addList.style.display = "inline-block";
 		addInput.value = "";
 	})
 
@@ -41,10 +52,6 @@ window.addEventListener("load",function(){
 		agregarLista();
 		function agregarLista(){
 				containerFather.style.display = "none";
-			var divNew = document.createElement("div");
-				containerGrand.appendChild(divNew);
-				divNew.style.display = "inline-block";
-				divNew.appendChild(addList);
 				addList.style.display = "inline-block";
 				lista.appendChild(inputValue);
 				lista.classList.add("lista");
@@ -70,6 +77,7 @@ window.addEventListener("load",function(){
 					nuevoBoton.appendChild(nodeBoton);
 					lista.appendChild(area);
 					lista.appendChild(nuevoBoton);
+       		area.setAttribute("draggable", "true");
 
 					nuevoBoton.addEventListener("click", nuevoGuardar);
 					function nuevoGuardar(){
@@ -84,5 +92,10 @@ window.addEventListener("load",function(){
 							lista.appendChild(agregarNuevaTarjeta);
 					};
 			};
+
+    area.addEventListener("ondragstart", dStart);
+	  area.addEventListener("ondrop", onDrop);
+  	area.addEventListener("ondragover", onOver);
+
 	}
 });
