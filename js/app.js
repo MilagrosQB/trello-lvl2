@@ -19,6 +19,7 @@ window.addEventListener("load",function(){
 		addList.style.display = "none";
 		btnSave.disabled = true;
     addInput.addEventListener("keyup", validate);
+    addInput.value = "";
 	}
 
   function validate() {
@@ -91,11 +92,26 @@ window.addEventListener("load",function(){
 							lista.appendChild(listaTarjeta);
 							lista.appendChild(agregarNuevaTarjeta);
 					};
+
+		var areaValue= document.querySelector("areaTexto");
+	    areaValue.addEventListener("dragstart", onStart);
+		  areaValue.addEventListener("drop", onDrop);
+	  	areaValue.addEventListener("dragover", onOver);
 			};
 
-    area.addEventListener("ondragstart", dStart);
-	  area.addEventListener("ondrop", onDrop);
-  	area.addEventListener("ondragover", onOver);
 
+  	function onStart(e){
+  		e.preventDefault();
+  	}
+
+  	function onDrop(e){
+  		e.dataTransfer.setData("textListTarjeta", e.target.id);
+  	}
+
+  	function onOver(e){
+  		e.preventDefault();
+  		var dropId = e.dataTransfer.getData("textListTarjeta");
+  		e.target.appendChild(document.getElementById(dropId));
+  	}
 	}
 });
