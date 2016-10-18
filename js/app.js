@@ -72,16 +72,16 @@ window.addEventListener("load",function(){
 					lista.appendChild(nuevoBoton);
 
 					nuevoBoton.addEventListener("click", nuevoGuardar);
-						function nuevoGuardar(){
-								area.style.display = "none";
-								nuevoBoton.style.display = "none";
+					function nuevoGuardar(){
+						area.style.display = "none";
+						nuevoBoton.style.display = "none";
 						var listaTarjeta = document.createElement("textarea");
-								listaTarjeta.focus();
+						listaTarjeta.focus();
 						var textListTarjeta = document.createTextNode(area.value);
-								listaTarjeta.classList.add("areaTarjeta");
-								listaTarjeta.appendChild(textListTarjeta);
-								lista.appendChild(listaTarjeta);
-								lista.appendChild(agregarNuevaTarjeta);
+						listaTarjeta.classList.add("areaTarjeta");
+						listaTarjeta.appendChild(textListTarjeta);
+						lista.appendChild(listaTarjeta);
+						lista.appendChild(agregarNuevaTarjeta);
 					}; 
 		};
 	}
