@@ -57,7 +57,32 @@ window.addEventListener("load",function(){
 				containerGrand.appendChild(formCard);
 		}
 
-	
+		agregarNuevaTarjeta.addEventListener("click", tarjetaCreada);
+			function tarjetaCreada(){
+					agregarNuevaTarjeta.remove();
+			var area = document.createElement("textarea");
+					area.classList.add("areaTexto");
+					lista.appendChild(area);
+					lista.insertBefore(area,inputValue.nextSibling);
+			var nuevoBoton = document.createElement("button");
+			var nodeBoton = document.createTextNode("Añadir");
+					nuevoBoton.classList.add("nuevoBoton");
+					nuevoBoton.appendChild(nodeBoton);
+					lista.appendChild(area);
+					lista.appendChild(nuevoBoton);
+
+					nuevoBoton.addEventListener("click", nuevoGuardar);
+						function nuevoGuardar(){
+								area.style.display = "none";
+								nuevoBoton.style.display = "none";
+						var listaTarjeta = document.createElement("textarea");
+								listaTarjeta.focus();
+						var textListTarjeta = document.createTextNode(area.value);
+								listaTarjeta.classList.add("areaTarjeta");
+								listaTarjeta.appendChild(textListTarjeta);
+								lista.appendChild(listaTarjeta);
+								lista.appendChild(agregarNuevaTarjeta);
+					}; 
+		};
 	}
 });
-
