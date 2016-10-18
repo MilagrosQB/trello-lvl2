@@ -60,12 +60,12 @@ window.addEventListener("load",function(){
 		agregarNuevaTarjeta.addEventListener("click", tarjetaCreada);
 			function tarjetaCreada(){
 					agregarNuevaTarjeta.remove();
-			var area = document.createElement("textarea");
+				var area = document.createElement("textarea");
 					area.classList.add("areaTexto");
 					lista.appendChild(area);
 					lista.insertBefore(area,inputValue.nextSibling);
-			var nuevoBoton = document.createElement("button");
-			var nodeBoton = document.createTextNode("Añadir");
+				var nuevoBoton = document.createElement("button");
+				var nodeBoton = document.createTextNode("Añadir");
 					nuevoBoton.classList.add("nuevoBoton");
 					nuevoBoton.appendChild(nodeBoton);
 					lista.appendChild(area);
