@@ -82,7 +82,7 @@ window.addEventListener("load",function(){
 							listaTarjeta.appendChild(textListTarjeta);
 							lista.appendChild(listaTarjeta);
 							lista.appendChild(agregarNuevaTarjeta);
-					}; 
+					};
 		};
 	}
 });
