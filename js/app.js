@@ -106,9 +106,9 @@ window.addEventListener("load",function(){
 					};
 
 		var areaValue= document.querySelector("areaTexto");
-	    areaValue.addEventListener("dragstart", onStart);
-		  areaValue.addEventListener("drop", onDrop);
-	  	areaValue.addEventListener("dragover", onOver);
+	    	areaValue.addEventListener("dragstart", onStart);
+		  	areaValue.addEventListener("drop", onDrop);
+	  		areaValue.addEventListener("dragover", onOver);
 			};
 
 
@@ -116,11 +116,11 @@ window.addEventListener("load",function(){
   		e.preventDefault();
   	}
 
-  	function onDrop(e){
+  	function onDrop(target, e){
   		e.dataTransfer.setData("textListTarjeta", e.target.id);
   	}
 
-  	function onOver(e){
+  	function onOver(target, e){
   		e.preventDefault();
   		var dropId = e.dataTransfer.getData("textListTarjeta");
   		e.target.appendChild(document.getElementById(dropId));
