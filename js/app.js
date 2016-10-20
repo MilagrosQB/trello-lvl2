@@ -24,6 +24,7 @@ window.addEventListener("load",function(){
 
   function validate() {
   	var addInputValue = document.getElementById("addInput").value;
+  	var 
   	if (addInputValue.length === 0) {
   		btnSave.disabled = true;
   	} else {
@@ -79,12 +80,13 @@ window.addEventListener("load",function(){
 					lista.appendChild(area);
 					lista.appendChild(nuevoBoton);
        		area.setAttribute("draggable", "true");
+       		//nuevoBoton.disabled = true;
 
 					nuevoBoton.addEventListener("click", nuevoGuardar);
 					function nuevoGuardar(){
 							area.style.display = "none";
 							nuevoBoton.style.display = "none";
-						var listaTarjeta = document.createElement("textarea");
+						var listaTarjeta = document.createElement("div");
 							listaTarjeta.focus();
 						var textListTarjeta = document.createTextNode(area.value);
 							listaTarjeta.classList.add("areaTarjeta");

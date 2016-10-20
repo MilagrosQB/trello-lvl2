@@ -6,6 +6,7 @@
 
 body {
     background-color: #0079BF;
+    white-space: nowrap;
 }
 
 nav {
@@ -46,6 +47,7 @@ nav {
 
 /*----Formulario----*/
 #btnSave , .nuevoBoton {
+    display: block;
     width: 115px;
     height: 35px;
     background-color: #5EB54A;
@@ -56,6 +58,9 @@ nav {
 }
 
 #btnCerrar{
+    position: absolute;
+    left: 126px;
+    top: 56px;
     width: 35px;
     height: 34px;
     font-size: 14px;
@@ -68,6 +73,7 @@ nav {
 
 #containerFather {
     display: none;
+    position: relative;
     width: 237px;
     background-color: #E2E4E6;
     margin: 10px;
@@ -106,6 +112,7 @@ nav {
 .areaTarjeta {
     display: block;
     width: 211px;
+    background-color: #FFFFFF;
     margin-top: 15px;
     padding: 5px;
     border-radius: 3px;
