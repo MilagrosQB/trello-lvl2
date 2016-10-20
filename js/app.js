@@ -24,8 +24,8 @@ window.addEventListener("load",function(){
 
   function validate() {
   	var addInputValue = document.getElementById("addInput").value;
-  	var 
-  	if (addInputValue.length === 0) {
+
+  	if (addInputValue.length === 0 && areaValue.length === 0) {
   		btnSave.disabled = true;
   	} else {
   		btnSave.disabled = false;
@@ -74,13 +74,23 @@ window.addEventListener("load",function(){
 					lista.appendChild(area);
 					lista.insertBefore(area,inputValue.nextSibling);
 				var nuevoBoton = document.createElement("button");
+				nuevoBoton.setAttribute("id", "newbtn");
 				var nodeBoton = document.createTextNode("Añadir");
 					nuevoBoton.classList.add("nuevoBoton");
 					nuevoBoton.appendChild(nodeBoton);
 					lista.appendChild(area);
 					lista.appendChild(nuevoBoton);
        		area.setAttribute("draggable", "true");
-       		//nuevoBoton.disabled = true;
+/*       		validateNew();
+      		function validateNew(){
+      			var areaValue= area.value;
+      			if (areaValue.length === 0){
+      				newbtn.disabled = true;
+      			} else {
+      				newbtn.disabled = false;
+      			}
+       		}
+*/
 
 					nuevoBoton.addEventListener("click", nuevoGuardar);
 					function nuevoGuardar(){
