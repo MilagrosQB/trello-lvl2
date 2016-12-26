@@ -15,6 +15,11 @@ nav {
     color: white;
 }
 
+nav ul p {
+    margin: 23% 0% 5% -31%;
+    font-weight: bold;
+    font-size: 1.2em;
+}
 
 .div-tablero {
     width: 150px;
@@ -85,6 +90,7 @@ nav {
     width: 237px;
     height: auto;
     background-color: #E2E4E6;
+    font-weight: bold;
     margin: 10px;
     padding: 13px;
     border-radius: 5px;
@@ -96,13 +102,13 @@ nav {
     color: #949494;
     text-decoration : none;
     padding-top: 20px;
-
 }
 
 .areaTexto {
     display: block;
     width: 211px;
     height: 60px;
+    font-weight: normal;
     margin-top: 10px;
     border-radius: 3px;
     border : none;
@@ -111,10 +117,12 @@ nav {
 
 .areaTarjeta {
     display: block;
+    cursor: pointer;
     width: 211px;
     background-color: #FFFFFF;
     margin-top: 15px;
     padding: 5px;
+    font-weight: normal;
     border-radius: 3px;
     border:none;
     resize: none;

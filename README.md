@@ -26,6 +26,4 @@ Versión 0.0.5:
 Al dar click en el botón de guardar al momento de añadir tarjeta, mostrar el mensaje de "Añadir tarjeta" debajo de la tarjeta añadida.
 
 Versión 0.0.6:
-Se puede crear una tarjeta al hacerle clic "Añadir carpeta", podrás visualizar un campo para llenar y darle clic al botón Guardar.
-
-
+Se puede mover las tarjetas de una lista a otra.
